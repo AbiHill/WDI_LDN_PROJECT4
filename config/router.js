@@ -12,11 +12,17 @@ router.route('/events/:id')
   .put(secureRoute, events.update)
   .delete(secureRoute, events.delete);
 
+
+//USERS
 router.route('/register')
   .post(auth.register);
 
 router.route('/login')
   .post(auth.login);
+
+router.get('/users/:id', auth.show);
+
+router.put('/users/:id', auth.update);
 
 router.route('/*')
   .all((req, res) => res.status(404).json({ message: 'Not found' }));

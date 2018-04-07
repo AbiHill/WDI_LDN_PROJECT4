@@ -40,7 +40,10 @@ class IndexRoute extends React.Component {
               <Link to={`/events/${event._id}`}>
                 <div className="card">
                   <div className="card-content">
-                    <h3 className="title is-4">{event.name}</h3>
+                    <img src={`${event.image}`} />
+                    <h2 className="title is-4">{event.name}</h2>
+                    <h3 className="title is-4">{event.sport}</h3>
+                    <p className="title is-4">{event.date}</p>
                   </div>
                 </div>
               </Link>

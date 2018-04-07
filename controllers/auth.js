@@ -24,7 +24,25 @@ function login(req, res, next) {
     .catch(next);
 }
 
+// PROFILE PAGE
+function show(req, res, next) {
+  User.findById(req.params.id)
+    .then(user => res.json(user))
+    .catch(next);
+}
+
+// UPDATE PROFILE PAGE
+function update(req, res, next) {
+  User.findById(req.params.id)
+    .then(user => Object.assign(user, req.body))
+    .then(user => user.save())
+    .then(user => res.json(user))
+    .catch(next);
+}
+
 module.exports = {
   register,
-  login
+  login,
+  show,
+  update
 };

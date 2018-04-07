@@ -51,7 +51,9 @@ class Register extends React.Component {
         </div>
         <div className="field">
           <label htmlFor="mobileNumber">Mobile Number</label>
-          <input className="input"
+          <input
+            type="tel"
+            className="input"
             placeholder="Mobile Number"
             name="mobileNumber"
             onChange={this.handleChange}

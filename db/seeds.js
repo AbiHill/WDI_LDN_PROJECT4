@@ -15,9 +15,9 @@ mongoose.connect(dbURI, (err, db) => {
       lng: -0.0703101
     },
     image: 'https://londonolios.files.wordpress.com/2016/03/0016.jpg',
-    desciption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
     teamSize: 5,
-    date: 1/5/2018,
+    date: 2018-4-13,
     time: 13.00
 
   },
@@ -30,9 +30,9 @@ mongoose.connect(dbURI, (err, db) => {
       lng: -0.0703102
     },
     image: 'https://londonolios.files.wordpress.com/2016/03/0016.jpg',
-    desciption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
     teamSize: 11,
-    date: 1/12/2018,
+    date: 2018-5-10,
     time: 10.00
 
   },
@@ -45,9 +45,9 @@ mongoose.connect(dbURI, (err, db) => {
       lng: -0.0703100
     },
     image: 'https://londonolios.files.wordpress.com/2016/03/0016.jpg',
-    desciption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
     teamSize: 2,
-    date: 1/10/2018,
+    date: 2018-7-13,
     time: 14.00
   }
   ])
