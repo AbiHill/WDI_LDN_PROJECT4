@@ -16,7 +16,9 @@ mongoose.connect(dbURI, (err, db) => {
     },
     image: 'https://londonolios.files.wordpress.com/2016/03/0016.jpg',
     desciption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
-    teamSize: 5
+    teamSize: 5,
+    date: 1/5/2018,
+    time: 13.00
 
   },
   {
@@ -29,7 +31,9 @@ mongoose.connect(dbURI, (err, db) => {
     },
     image: 'https://londonolios.files.wordpress.com/2016/03/0016.jpg',
     desciption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
-    teamSize: 11
+    teamSize: 11,
+    date: 1/12/2018,
+    time: 10.00
 
   },
   {
@@ -42,7 +46,9 @@ mongoose.connect(dbURI, (err, db) => {
     },
     image: 'https://londonolios.files.wordpress.com/2016/03/0016.jpg',
     desciption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
-    teamSize: 2
+    teamSize: 2,
+    date: 1/10/2018,
+    time: 14.00
   }
   ])
     .then(events => console.log(`${events.length} events created`))

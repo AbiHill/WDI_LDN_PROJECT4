@@ -9,6 +9,8 @@ const eventSchema = new mongoose.Schema({
   sport: { type: String },
   address: { type: String },
   image: { type: String },
+  date: { type: Date },
+  time: { type: Number },
   description: { type: String },
   teamSize: { type: Number }
 }, {
