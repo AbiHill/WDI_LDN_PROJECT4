@@ -31,13 +31,18 @@ function show(req, res, next) {
     .catch(next);
 }
 
-// UPDATE PROFILE PAGE
+//STUCK HERE - ASK MIKE TO HELP
+// Update users event when user clicks join event
 function update(req, res, next) {
   User.findById(req.params.id)
-    .then(user => Object.assign(user, req.body))
-    .then(user => user.save())
-    .then(user => res.json(user))
-    .catch(next);
+  // console.log(req.body);
+    // .then(user => console.log(user.events))
+    .then(user => user['events'].push(req.body));
+    //this returns the length of the array when you use .push so how do I save the user?
+    // .then(user => console.log(user));
+    // .then(user => user.save())
+    // .then(user => res.json(user))
+    // .catch(next);
 }
 
 module.exports = {

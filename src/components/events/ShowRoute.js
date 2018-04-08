@@ -25,7 +25,7 @@ class ShowRoute extends React.Component {
 
   joinEvent = () => {
     console.log(this.state.event._id);
-    axios.put(`/api/users/${Auth.getUserByID()}`, this.state.event._id);
+    axios.put(`/api/users/${Auth.getUserByID()}`, {body: this.state.event._id});
   }
 
   render() {
@@ -41,7 +41,7 @@ class ShowRoute extends React.Component {
           <img src={`${this.state.event.image}`} />
           <Link className="button is-primary" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
           <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
-          <button className="button" onClick={this.joinEvent}>Join Event</button>
+          <button className="button" onClick={this.joinEvent} >Join Event</button>
           <p>Address: {this.state.event.address}</p>
           <GoogleMap center={this.state.event.location} />
         </div>
