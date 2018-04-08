@@ -1,26 +1,22 @@
-
 class Flash {
 
-//first set the message as falsey.
-  _messages = null;
+  static _messages = null;
 
-  static setMessages(type, message){
-    // the below will set the this._messages as the message if it isn't null. If it is null it will move over to the OR and set the message as an empty object.
+  static setMessage(type, message) {
+    //create a messages object, use the arguments passed to create a key value pair of message type and the message
     this._messages = this._messages || {};
-    //here we set the message type as the message, if the object that's coming over is danger: 'hi there'
     this._messages[type] = message;
   }
 
-  //the below function retrieves/returns the message
   static getMessages() {
+    //return the message object, it will have key value pairs or be empty as per setMessage()
     return this._messages;
   }
 
-  //this sets the message back to null and therefore falsey
-  static clearMessages() {
+  static clearMessages(){
+    //sets the messages object back to null like at the top of this file
     this._messages = null;
   }
-
 }
 
 export default Flash;

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
+import GoogleMap from './GoogleMap';
 
 import { Link } from 'react-router-dom';
 
@@ -27,10 +28,14 @@ class ShowRoute extends React.Component {
       this.state.event ? (
         <div className="container">
           <h1 className="title">{this.state.event.name}</h1>
+          <h2 className="subtitle">{this.state.event.sport}</h2>
+          <p>{this.state.event.date} @ {this.state.event.time}</p>
+          <p>{this.state.event.description}</p>
 
           <Link className="button is-primary" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
           {' '}
           <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+          <GoogleMap center={this.state.event.location} />
         </div>
       ) : (
         <div className="container">
