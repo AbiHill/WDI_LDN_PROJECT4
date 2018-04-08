@@ -31,11 +31,12 @@ class ShowRoute extends React.Component {
           <h2 className="subtitle">{this.state.event.sport}</h2>
           <p>{this.state.event.date} @ {this.state.event.time}</p>
           <p>{this.state.event.description}</p>
-          <img src={`${event.image}`} />
-
+          <p>Team Size: {this.state.event.teamSize}</p>
+          <img src={`${this.state.event.image}`} />
           <Link className="button is-primary" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
-          {' '}
           <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+          <button className="button">Join Event</button>
+          <p>Address: {this.state.event.address}</p>
           <GoogleMap center={this.state.event.location} />
         </div>
       ) : (

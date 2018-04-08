@@ -26,6 +26,12 @@ class Auth {
     return JSON.parse(atob(parts[1]));
   }
 
+  static getUserByID() {
+    const payload = this.getPayload();
+    const userID = payload.sub;
+    return userID;
+  }
+
   // we wrote this by using the satellizer docs about how isAuthenticated worked and wrote it long form ourselves.
   static isAuthenticated() {
     //check for a token

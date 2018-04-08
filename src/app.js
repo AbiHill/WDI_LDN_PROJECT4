@@ -10,7 +10,7 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import NotFound from './components/common/NotFound';
 import FlashMessages from './components/common/FlashMessages';
-// import Profile from './components/auth/Profile';
+import Profile from './components/auth/Profile';
 
 import './scss/style.scss';
 
@@ -32,7 +32,7 @@ class App extends React.Component {
             <Switch>
               <ProtectedRoute exact path="/events/new" component={NewRoute} />
               <Route exact path="/events/:id/edit" component={EditRoute} />
-              {/* <Route exact path="/users/:id" component={Profile} /> */}
+              <Route exact path="/users/" component={Profile} />
               <Route exact path="/events/:id" component={ShowRoute} />
               <Route exact path="/events" component={IndexRoute} />
               <Route path="/register" component={Register} />
