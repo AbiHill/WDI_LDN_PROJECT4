@@ -1,3 +1,4 @@
+/* global google */
 import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
@@ -22,6 +23,18 @@ class Register extends React.Component {
       .then(() => this.props.history.push('/events'));
   }
 
+  autoCompleteAddress = (e) => {
+    console.log(e.target.value);
+    const autocomplete = new google.maps.places.Autocomplete(e.target, {types: ['geocode']});
+    autocomplete.addListener('place_changed', () => {
+      const place = autocomplete.getPlace();
+      this.setState({address: place.formatted_address}, () => console.log(this.state));
+
+    });
+    // const { name } = e.target;
+    // this.setState({ [name]: address.formatted_address }, () => console.log(this.state));
+  }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -42,11 +55,29 @@ class Register extends React.Component {
           />
         </div>
         <div className="field">
+          <label htmlFor="email">Email</label>
+          <input
+            className="input"
+            placeholder="Email"
+            name="email"
+            onChange={this.handleChange}
+          />
+        </div>
+        <div className="field">
+          <label htmlFor="image">Profle Picture</label>
+          <input
+            className="input"
+            placeholder="Image"
+            name="image"
+            onChange={this.handleChange}
+          />
+        </div>
+        <div className="field">
           <label htmlFor="address">Address</label>
           <input className="input"
             placeholder="Address"
             name="address"
-            onChange={this.handleChange}
+            onChange={this.autoCompleteAddress}
           />
         </div>
         <div className="field">
@@ -56,15 +87,6 @@ class Register extends React.Component {
             className="input"
             placeholder="Mobile Number"
             name="mobileNumber"
-            onChange={this.handleChange}
-          />
-        </div>
-        <div className="field">
-          <label htmlFor="email">Email</label>
-          <input
-            className="input"
-            placeholder="Email"
-            name="email"
             onChange={this.handleChange}
           />
         </div>

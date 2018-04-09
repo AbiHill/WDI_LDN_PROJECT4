@@ -20,9 +20,10 @@ router.route('/register')
 router.route('/login')
   .post(auth.login);
 
-router.get('/users/:id', auth.show);
+router.get('/me', secureRoute, auth.show);
 
-router.put('/users/:id', auth.update);
+router.put('/me', secureRoute, auth.update);
+router.put('/me/join/:eventId', secureRoute, auth.joinEvent);
 
 router.route('/*')
   .all((req, res) => res.status(404).json({ message: 'Not found' }));

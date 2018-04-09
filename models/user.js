@@ -8,7 +8,8 @@ const userSchema = new mongoose.Schema({
   mobileNumber: { type: Number },
   address: { type: String },
   password: { type: String },
-  events: []
+  events: [{ type: mongoose.Schema.ObjectId, ref: 'Event' }],
+  image: { type: String }
 });
 
 userSchema

@@ -14,6 +14,7 @@ function createRoute(req, res, next) {
 
 function showRoute(req, res, next) {
   Event.findById(req.params.id)
+    .populate('joinedUsers')
     .then(event => res.json(event))
     .catch(next);
 }

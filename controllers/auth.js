@@ -26,28 +26,32 @@ function login(req, res, next) {
 
 // PROFILE PAGE
 function show(req, res, next) {
-  User.findById(req.params.id)
+  User.findById(req.currentUser._id)
+    .populate('events')
     .then(user => res.json(user))
     .catch(next);
 }
 
-//STUCK HERE - ASK MIKE TO HELP
-// Update users event when user clicks join event
+
 function update(req, res, next) {
   User.findById(req.params.id)
-  // console.log(req.body);
-    // .then(user => console.log(user.events))
-    .then(user => user['events'].push(req.body));
-    //this returns the length of the array when you use .push so how do I save the user?
-    // .then(user => console.log(user));
-    // .then(user => user.save())
-    // .then(user => res.json(user))
-    // .catch(next);
+    .then(user => Object.assign(user, req.body))
+    .then(user => user.save())
+    .then(user => res.json(user))
+    .catch(next);
+}
+
+function joinEvent(req, res, next) {
+  req.currentUser.events.push(req.params.eventId);
+  req.currentUser.save()
+    .then(user => res.json(user))
+    .catch(next);
 }
 
 module.exports = {
   register,
   login,
   show,
-  update
+  update,
+  joinEvent
 };

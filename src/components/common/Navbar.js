@@ -45,7 +45,7 @@ class Navbar extends React.Component {
                 <Link className="navbar-item" to="/events">All Events</Link>
                 <Link className="navbar-item" to="/events/new">New Event</Link>
                 {/* below is the link to profile page....FIX */}
-                <Link className="navbar-item" to="/users/:id">Profile</Link>
+                <Link className="navbar-item" to="/me">Profile</Link>
                 <a className="navbar-item" onClick={this.handleLogout}>Logout</a>
               </div>
               :

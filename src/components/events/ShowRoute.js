@@ -25,10 +25,16 @@ class ShowRoute extends React.Component {
 
   joinEvent = () => {
     console.log(this.state.event._id);
-    axios.put(`/api/users/${Auth.getUserByID()}`, {body: this.state.event._id});
+    console.log(Auth.getToken());
+    axios.put(`/api/me/join/${this.state.event._id}`, this.state.event._id, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(res => console.log(res))
+      .catch(err => console.error(err));
   }
 
   render() {
+    console.log(this.state.event);
     return (
       this.state.event ? (
         <div className="container">
@@ -39,9 +45,20 @@ class ShowRoute extends React.Component {
           <p>Team Size: {this.state.event.teamSize}</p>
           <p>ID: {this.state.event._id} </p>
           <img src={`${this.state.event.image}`} />
+          <h2 className="Title">Attendies</h2>
+          {this.state.event.joinedUsers.map((user, i) =>
+            <li key={i} className="column is-one-third">
+              <div className="card">
+                <div className="card-content">
+                  <h3 className="title is-4">{user.firstName}</h3>
+                  {/* <img src={`${uer.image}`} /> */}
+                </div>
+              </div>
+            </li>
+          )}
           <Link className="button is-primary" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
           <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
-          <button className="button" onClick={this.joinEvent} >Join Event</button>
+          <button className="button" onClick={this.joinEvent}>Join Event</button>
           <p>Address: {this.state.event.address}</p>
           <GoogleMap center={this.state.event.location} />
         </div>
