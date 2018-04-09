@@ -7,6 +7,9 @@ function indexRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
+  console.log(req.body);
+  req.body.location = req.body.address.location;
+  req.body.address = req.body.address.address;
   Event.create(req.body)
     .then(event => res.status(201).json(event))
     .catch(next);

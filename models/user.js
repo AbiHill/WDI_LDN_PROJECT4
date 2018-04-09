@@ -9,7 +9,11 @@ const userSchema = new mongoose.Schema({
   address: { type: String },
   password: { type: String },
   events: [{ type: mongoose.Schema.ObjectId, ref: 'Event' }],
-  image: { type: String }
+  image: { type: String },
+  location: {
+    lat: { type: Number },
+    lng: { type: Number }
+  }
 });
 
 userSchema

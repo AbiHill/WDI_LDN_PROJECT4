@@ -1,11 +1,15 @@
 import React from 'react';
+import AutoComplete from '../common/AutoComplete';
+import ReactFilestack from 'filestack-react';
+
+const apiKey = 'AU5Uo7xXbRUezl3OcFq3Zz';
 
 const Form = ({ handleChange, handleSubmit, data }) => {
   console.log(data);
   return(
     <form onSubmit={handleSubmit}>
       <div className="field">
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Event Name</label>
         <input
           className="input"
           placeholder="Name"
@@ -26,18 +30,20 @@ const Form = ({ handleChange, handleSubmit, data }) => {
           <option value="tennis">Tennis</option>
           <option value="golf">Golf</option>
           <option value="frisbee">Frisbee</option>
-          <option value="bendminton">Badminton</option>
+          <option value="badminton">Badminton</option>
+          <option value="tabletennis">Table Tennis</option>
+          <option value="running">Running</option>
         </select>
         {/* {data.errors.sport && <small>{data.errors.sport}</small>} */}
       </div>
       <div className="field">
         <label htmlFor="address">Address</label>
-        <input
+        <AutoComplete
           className="input"
           placeholder="Address"
           name="address"
+          value={data.address.adress}
           onChange={handleChange}
-          value={data.address}
         />
         {/* {data.errors.address && <small>{data.errors.address}</small>} */}
       </div>
@@ -52,6 +58,13 @@ const Form = ({ handleChange, handleSubmit, data }) => {
         />
         {/* {data.errors.image && <small>{data.errors.image}</small>} */}
       </div>
+      <ReactFilestack
+        apikey={apiKey}
+        buttonText="Upload Image"
+        buttonClass="classname"
+        // options={options}
+        // onSuccess={this.yourCallbackFunction}
+      />
       <div className="field">
         <label htmlFor="date">date</label>
         <input

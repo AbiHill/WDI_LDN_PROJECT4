@@ -1,7 +1,7 @@
-/* global google */
 import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
+import AutoComplete from '../common/AutoComplete';
 
 class Register extends React.Component {
 
@@ -21,18 +21,6 @@ class Register extends React.Component {
       })
       //redirect to index
       .then(() => this.props.history.push('/events'));
-  }
-
-  autoCompleteAddress = (e) => {
-    console.log(e.target.value);
-    const autocomplete = new google.maps.places.Autocomplete(e.target, {types: ['geocode']});
-    autocomplete.addListener('place_changed', () => {
-      const place = autocomplete.getPlace();
-      this.setState({address: place.formatted_address}, () => console.log(this.state));
-
-    });
-    // const { name } = e.target;
-    // this.setState({ [name]: address.formatted_address }, () => console.log(this.state));
   }
 
   render() {
@@ -74,10 +62,10 @@ class Register extends React.Component {
         </div>
         <div className="field">
           <label htmlFor="address">Address</label>
-          <input className="input"
+          <AutoComplete className="input"
             placeholder="Address"
             name="address"
-            onChange={this.autoCompleteAddress}
+            onChange={this.handleChange}
           />
         </div>
         <div className="field">
