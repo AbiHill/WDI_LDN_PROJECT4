@@ -25,6 +25,8 @@ router.get('/me', secureRoute, auth.show);
 router.put('/me', secureRoute, auth.update);
 router.put('/me/join/:eventId', secureRoute, auth.joinEvent);
 
+router.put('/me/leave/:eventId', secureRoute, auth.leaveEvent);
+
 router.route('/*')
   .all((req, res) => res.status(404).json({ message: 'Not found' }));
 

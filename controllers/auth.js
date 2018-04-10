@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const { secret } = require('../config/environment');
+const twilio = require('../lib/twilio');
 
 function register(req, res, next) {
   console.log(req.body);
@@ -47,7 +48,25 @@ function update(req, res, next) {
 function joinEvent(req, res, next) {
   req.currentUser.events.push(req.params.eventId);
   req.currentUser.save()
-    .then(user => res.json(user))
+    .then(user => {
+      res.json(user);
+      return twilio
+        .sendSMS(user.tel, 'You have joined an event! Sick bruv, see you there yo!');
+    })
+    .catch(next);
+}
+
+function leaveEvent(req, res, next) {
+  User.findById(req.currentUser._id)
+    .then(user => {
+      const index = user.events.indexOf(req.params.eventId);
+      const updatedEvents = [...user.events.slice(0, index), ...user.events.slice(index + 1)];
+      user.events = updatedEvents;
+      return user.save();
+    })
+    .then(user => {
+      res.json(user);
+    })
     .catch(next);
 }
 
@@ -56,5 +75,6 @@ module.exports = {
   login,
   show,
   update,
-  joinEvent
+  joinEvent,
+  leaveEvent
 };

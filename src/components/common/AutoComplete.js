@@ -5,8 +5,6 @@ import React from 'react';
 class AutoComplete extends React.Component {
 
   componentDidMount() {
-    console.log('AutoComplete');
-
     this.autocompleteInput = new google.maps.places.Autocomplete(this.input);
     this.autocompleteInput.addListener('place_changed', () => {
       const place = this.autocompleteInput.getPlace();

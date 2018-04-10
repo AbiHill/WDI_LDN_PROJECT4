@@ -9,8 +9,7 @@ const eventSchema = new mongoose.Schema({
   sport: { type: String },
   address: { type: String },
   image: { type: String },
-  date: { type: Date },
-  time: { type: Number },
+  dateTime: { type: Date },
   description: { type: String },
   teamSize: { type: Number },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }

@@ -11,16 +11,24 @@ class NewRoute extends React.Component {
     sport: '',
     address: '',
     image: '',
-    date: 0,
-    time: 0,
+    dateTime: 0,
     description: '',
     teamSize: 0
   }
 
   handleChange = (e) => {
-    const { name, value } = e.target;
-    const errors = { ...this.state.errors, [name]: '' };
-    this.setState({ [name]: value, errors }, () => console.log(this.state));
+    if (e.target.name === 'image') {
+      console.log(e.target);
+      // this.setState({ [e.target.name]: e.target.url });
+    } else {
+      const { name, value } = e.target;
+      const errors = { ...this.state.errors, [name]: '' };
+      this.setState({ [name]: value, errors }, () => console.log(this.state));
+    }
+  }
+
+  handleFileStack = (res) => {
+    this.setState({ image: res.filesUploaded[0].url}, () => console.log(this.state));
   }
 
 
@@ -41,7 +49,7 @@ class NewRoute extends React.Component {
   render(){
     return(
       <div className="container">
-        <Form handleChange={this.handleChange} handleSubmit={this.handleSubmit} data={this.state} />
+        <Form handleFilestack={this.handleFileStack} handleChange={this.handleChange} handleSubmit={this.handleSubmit} data={this.state} />
       </div>
     );
   }

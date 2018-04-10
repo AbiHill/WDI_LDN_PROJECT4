@@ -32,7 +32,6 @@ class EditRoute extends React.Component {
 
   componentDidMount() {
     axios.get(`/api/events/${this.props.match.params.id}`)
-    //not updating an object, resetting the whole state so the syntax is as below
       .then(res => this.setState(res.data));
   }
 

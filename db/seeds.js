@@ -11,7 +11,7 @@ mongoose.connect(dbURI, (err, db) => {
     username: 'abihill',
     firstName: 'abi',
     email: 'abihill8@gmail.com',
-    mobileNumber: 7720383798,
+    tel: '07720383798',
     address: '18 Chopwell Close, Stratford, E15 4RP',
     password: 'password',
     passwordConfirmation: 'password',
@@ -30,7 +30,7 @@ mongoose.connect(dbURI, (err, db) => {
         image: 'https://cbsdetroit.files.wordpress.com/2014/08/83830190.jpg?w=420',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
         teamSize: 10,
-        date: 2018-4-13,
+        dateTime: 2018-4-13,
         time: 13.00,
         joinedUsers: [],
         createdBy: user
@@ -46,7 +46,7 @@ mongoose.connect(dbURI, (err, db) => {
         image: 'https://res.cloudinary.com/jerrick/image/upload/c_fit,f_auto,fl_progressive,q_auto,w_1100/chkcwgslbexsxikjgcqs',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
         teamSize: 11,
-        date: 2018-5-10,
+        dateTime: 2018-5-10,
         time: 10.00,
         joinedUsers: [],
         createdBy: user
@@ -62,7 +62,7 @@ mongoose.connect(dbURI, (err, db) => {
         image: 'https://www.cssc.co.uk/CSSC/cache/file/E0A0D90E-D219-DB92-59BA24F8F9BFCFFA.jpg',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
         teamSize: 2,
-        date: 2018-7-13,
+        dateTime: 2018-7-13,
         time: 14.00,
         joinedUsers: [],
         createdBy: user
@@ -78,7 +78,7 @@ mongoose.connect(dbURI, (err, db) => {
         image: 'https://www.openplay.co.uk/uploads/tLEVLonPC6CmDPml-600x_.jpg',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
         teamSize: 2,
-        date: 2018-7-13,
+        dateTime: 2018-7-13,
         time: 14.00,
         joinedUsers: [],
         createdBy: user
@@ -94,7 +94,7 @@ mongoose.connect(dbURI, (err, db) => {
         image: 'https://www.ci.sherman.tx.us/ImageRepository/Document?documentID=8098',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.',
         teamSize: 2,
-        date: 2018-7-13,
+        dateTime: 2018-7-13,
         time: 14.00,
         joinedUsers: [],
         createdBy: user

@@ -29,7 +29,7 @@ class ShowProfile extends React.Component {
         <h2 className='subtitle'>{this.state.user.username}</h2>
         <h2 className='subtitle'>{this.state.user.email}</h2>
         <h2 className='subtitle'>{this.state.user.address}</h2>
-        <h2 className='subtitle'>{this.state.user.mobileNumber}</h2>
+        <h2 className='subtitle'>{this.state.user.tel}</h2>
         <h2 className="title">Your Events</h2>
         {this.state.user.events.map((event, i) =>
           <li key={i} className="column is-one-third">

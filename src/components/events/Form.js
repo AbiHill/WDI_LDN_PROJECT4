@@ -4,8 +4,10 @@ import ReactFilestack from 'filestack-react';
 
 const apiKey = 'AU5Uo7xXbRUezl3OcFq3Zz';
 
-const Form = ({ handleChange, handleSubmit, data }) => {
-  console.log(data);
+
+
+const Form = ({ handleChange, handleSubmit, data, handleFilestack }) => {
+  console.log('this is the data', data.sport);
   return(
     <form onSubmit={handleSubmit}>
       <div className="field">
@@ -48,24 +50,26 @@ const Form = ({ handleChange, handleSubmit, data }) => {
         {/* {data.errors.address && <small>{data.errors.address}</small>} */}
       </div>
       <div className="field">
-        <label htmlFor="name">Image</label>
+        {/* <label htmlFor="name">Image</label>
         <input
           className="input"
           placeholder="Image"
           name="image"
           onChange={handleChange}
           value={data.image}
-        />
+        /> */}
         {/* {data.errors.image && <small>{data.errors.image}</small>} */}
       </div>
       <ReactFilestack
         apikey={apiKey}
         buttonText="Upload Image"
         buttonClass="classname"
+        // onSuccess={res => this.setState({ image: res.filesUploaded[0].url}, () => console.log(this.state))}
         // options={options}
-        // onSuccess={this.yourCallbackFunction}
+        onSuccess={res => handleFilestack(res)}
       />
-      <div className="field">
+      <img src={`${data.image}`} />
+      {/* <div className="field">
         <label htmlFor="date">date</label>
         <input
           type="date"
@@ -75,16 +79,17 @@ const Form = ({ handleChange, handleSubmit, data }) => {
           onChange={handleChange}
           value={data.date}
         />
-        {/* {data.errors.date && <small>{data.errors.date}</small>} */}
-      </div>
+        {/* {data.errors.date && <small>{data.errors.date}</small>}
+      </div> */}
       <div className="field">
-        <label htmlFor="time">time</label>
+        <label htmlFor="dateTime">Date & time</label>
         <input
+          type="datetime-local"
           className="input"
-          placeholder="time"
-          name="time"
+          placeholder="dateTime"
+          name="dateTime"
           onChange={handleChange}
-          value={data.time}
+          value={data.dateTime}
         />
         {/* {data.errors.time && <small>{data.errors.time}</small>} */}
       </div>

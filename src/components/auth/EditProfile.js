@@ -7,7 +7,7 @@ import AutoComplete from '../common/AutoComplete';
 import ReactFilestack from 'filestack-react';
 const apiKey = 'AU5Uo7xXbRUezl3OcFq3Zz';
 
-class Register extends React.Component {
+class EditProfile extends React.Component {
 
   state = {}
 
@@ -123,4 +123,4 @@ class Register extends React.Component {
   }
 }
 
-export default Register;
+export default EditProfile;

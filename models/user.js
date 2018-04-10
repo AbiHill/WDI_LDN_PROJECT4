@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   username: { type: String },
   firstName: { type: String },
   email: { type: String },
-  mobileNumber: { type: Number },
+  tel: { type: String },
   address: { type: String },
   password: { type: String },
   events: [{ type: mongoose.Schema.ObjectId, ref: 'Event' }],

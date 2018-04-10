@@ -43,7 +43,8 @@ class IndexRoute extends React.Component {
                     <img src={`${event.image}`} />
                     <h2 className="title is-4">{event.name}</h2>
                     <h3 className="title is-4">{event.sport}</h3>
-                    <p className="title is-4">{event.date}</p>
+                    {/* splitting the date below */}
+                    {/* <p className="title is-4">{event.dateTime.split('T')[0].split('-')[2]}/{event.dateTime.split('T')[0].split('-')[1]}/{event.dateTime.split('T')[0].split('-')[0]}</p> */}
                   </div>
                 </div>
               </Link>
