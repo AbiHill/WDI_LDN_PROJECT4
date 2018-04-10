@@ -8,6 +8,7 @@ function indexRoute(req, res, next) {
 
 function createRoute(req, res, next) {
   console.log(req.body);
+  if (!req.body.createdBy) req.body.createdBy = req.currentUser;
   req.body.location = req.body.address.location;
   req.body.address = req.body.address.address;
   Event.create(req.body)
@@ -18,6 +19,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Event.findById(req.params.id)
     .populate('joinedUsers')
+    .populate('createdBy')
     .then(event => res.json(event))
     .catch(next);
 }

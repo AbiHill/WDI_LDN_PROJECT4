@@ -35,6 +35,7 @@ class ShowRoute extends React.Component {
 
   render() {
     console.log(this.state.event);
+    const userId = Auth.getPayload().sub;
     return (
       this.state.event ? (
         <div className="container">
@@ -56,8 +57,12 @@ class ShowRoute extends React.Component {
               </div>
             </li>
           )}
-          <Link className="button is-primary" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
-          <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+          {this.state.event.createdBy && this.state.event.createdBy._id === userId &&
+            <div>
+              <Link className="button is-primary" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
+              <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+            </div>
+          }
           <button className="button" onClick={this.joinEvent}>Join Event</button>
           <p>Address: {this.state.event.address}</p>
           <GoogleMap center={this.state.event.location} />

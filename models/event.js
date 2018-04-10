@@ -12,7 +12,8 @@ const eventSchema = new mongoose.Schema({
   date: { type: Date },
   time: { type: Number },
   description: { type: String },
-  teamSize: { type: Number }
+  teamSize: { type: Number },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 }, {
   timestamps: true
 });
