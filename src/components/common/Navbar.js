@@ -42,17 +42,17 @@ class Navbar extends React.Component {
           <div className="navbar-end">
             {Auth.isAuthenticated() ?
               <div>
-                <Link className="navbar-item" to="/events">All Events</Link>
-                <Link className="navbar-item" to="/events/new">New Event</Link>
+                <Link className="navbar-item" to="/events">events</Link>
+                <Link className="navbar-item" to="/events/new">add</Link>
                 {/* below is the link to profile page....FIX */}
-                <Link className="navbar-item" to="/me">Profile</Link>
-                <a className="navbar-item" onClick={this.handleLogout}>Logout</a>
+                <Link className="navbar-item" to="/me">profile</Link>
+                <a className="navbar-item" onClick={this.handleLogout}>logout</a>
               </div>
               :
               <div>
-                <Link className="navbar-item" to="/events">All Events</Link>
-                <Link className="navbar-item" to="/login">Login</Link>
-                <Link className="navbar-item" to="/register">Register</Link>
+                <Link className="navbar-item" to="/events">events</Link>
+                <Link className="navbar-item" to="/login">login</Link>
+                <Link className="navbar-item" to="/register">register</Link>
               </div>
             }
           </div>

@@ -31,13 +31,13 @@ class Login extends React.Component{
         <div className="fullscreen-bg">
           {/* <!-- The video --> */}
           <video autoPlay muted loop poster="../../scss/images/basketball.jpg" id="myVideo" className="fullscreen-bg_video">
-            <source src="../../scss/images/rec_head_homepage.mp4" type="video/mp4" />
+            <source src="../../scss/images/basketball3.mp4" type="video/mp4" />
           </video>
         </div>
 
 
         <div>
-          <h1>REC HEAD</h1>
+          <h1 className="rechead">REC HEAD</h1>
           <div className="loginBox">
             <form className="loginForm" onSubmit={this.handleSubmit}>
               <div className="field">
