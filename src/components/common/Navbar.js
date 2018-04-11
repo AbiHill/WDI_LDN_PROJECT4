@@ -27,9 +27,6 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar">
         <div className="navbar-brand">
-          <Link className="navbar-item" to="/events">
-            Events
-          </Link>
           <div className={`navbar-burger ${this.state.navIsOpen? 'is-active' : ''}`}
             onClick={this.handleToggle}
           >
@@ -42,17 +39,17 @@ class Navbar extends React.Component {
           <div className="navbar-end">
             {Auth.isAuthenticated() ?
               <div>
-                <Link className="navbar-item" to="/events">events</Link>
-                <Link className="navbar-item" to="/events/new">add</Link>
+                <Link id="navlink" className="navbar-item" to="/events">events</Link>
+                <Link id="navlink" className="navbar-item" to="/events/new">add</Link>
                 {/* below is the link to profile page....FIX */}
-                <Link className="navbar-item" to="/me">profile</Link>
-                <a className="navbar-item" onClick={this.handleLogout}>logout</a>
+                <Link id="navlink" className="navbar-item" to="/me">profile</Link>
+                <a id="navlink" className="navbar-item" onClick={this.handleLogout}>logout</a>
               </div>
               :
               <div>
-                <Link className="navbar-item" to="/events">events</Link>
-                <Link className="navbar-item" to="/login">login</Link>
-                <Link className="navbar-item" to="/register">register</Link>
+                <Link id="navlink" className="navbar-item" to="/events">events</Link>
+                <Link id="navlink" className="navbar-item" to="/login">login</Link>
+                <Link id="navlink" className="navbar-item" to="/register">register</Link>
               </div>
             }
           </div>

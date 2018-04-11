@@ -36,34 +36,37 @@ class Login extends React.Component{
         </div>
 
 
-        <div>
+
+        <div className="loginBox">
+          <i id="falcon" className="fab fa-phoenix-framework"></i>
+
+          {/* <img src="../../scss/images/rechead_logo.gif" /> */}
+
           <h1 className="rechead">REC HEAD</h1>
-          <div className="loginBox">
-            <form className="loginForm" onSubmit={this.handleSubmit}>
-              <div className="field">
-                <label htmlFor="email">Email</label>
-                <input
-                  className="input"
-                  placeholder="Email"
-                  name="email"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="field">
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  className="input"
-                  placeholder="Password"
-                  name="password"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <button>Submit</button>
-              <a href="/Register">Register</a>
-            </form>
-          </div>
+          <form className="loginForm" onSubmit={this.handleSubmit}>
+            <div className="loginField">
+              <label htmlFor="email"></label>
+              <input
+                className="loginInput"
+                placeholder="Email"
+                name="email"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="loginField">
+              <label htmlFor="password"></label>
+              <input className="loginInput"
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={this.handleChange}
+              />
+            </div>
+            <button>LOGIN</button>
+            <a href="/Register">Register</a>
+          </form>
         </div>
+
       </section>
 
     );
