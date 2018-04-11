@@ -27,6 +27,9 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar">
         <div className="navbar-brand">
+          <Link className="navbar-item" to="/events">
+            <i id="falcon-logo" className="fab fa-phoenix-framework"></i><p className="logo-text"> R H</p>
+          </Link>
           <div className={`navbar-burger ${this.state.navIsOpen? 'is-active' : ''}`}
             onClick={this.handleToggle}
           >
@@ -37,21 +40,14 @@ class Navbar extends React.Component {
         </div>
         <div className={`navbar-menu ${this.state.navIsOpen ? 'is-active' : ''}`}>
           <div className="navbar-end">
-            {Auth.isAuthenticated() ?
-              <div>
-                <Link id="navlink" className="navbar-item" to="/events">events</Link>
-                <Link id="navlink" className="navbar-item" to="/events/new">add</Link>
-                {/* below is the link to profile page....FIX */}
-                <Link id="navlink" className="navbar-item" to="/me">profile</Link>
-                <a id="navlink" className="navbar-item" onClick={this.handleLogout}>logout</a>
-              </div>
-              :
-              <div>
-                <Link id="navlink" className="navbar-item" to="/events">events</Link>
-                <Link id="navlink" className="navbar-item" to="/login">login</Link>
-                <Link id="navlink" className="navbar-item" to="/register">register</Link>
-              </div>
-            }
+            {Auth.isAuthenticated() && <Link id="navlink" className="navbar-item" to="/events">events</Link>}
+            {Auth.isAuthenticated() && <Link id="navlink" className="navbar-item" to="/events/new">add</Link>}
+            {/* below is the link to profile page....FIX */}
+            {Auth.isAuthenticated() && <Link id="navlink" className="navbar-item" to="/me">profile</Link>}
+            {Auth.isAuthenticated() && <a id="navlink" className="navbar-item" onClick={this.handleLogout}>logout</a>}
+            {!Auth.isAuthenticated() && <Link id="navlink" className="navbar-item" to="/events">events</Link> }
+            {!Auth.isAuthenticated() && <Link id="navlink" className="navbar-item" to="/login">login</Link> }
+            {!Auth.isAuthenticated() && <Link id="navlink" className="navbar-item" to="/register">register</Link> }
           </div>
         </div>
       </nav>
