@@ -38,7 +38,7 @@ class ShowProfile extends React.Component {
                 <div className="card-content">
                   <h3 className="title is-4">{event.name}</h3>
                   <h4 className="subtitle">{event.sport}</h4>
-
+                  <h4></h4>
                   <img src={`${event.image}`} />
                 </div>
               </div>

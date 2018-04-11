@@ -54,7 +54,8 @@ class ShowRoute extends React.Component {
         <div className="container">
           <h1 className="title">{this.state.event.name}</h1>
           <h2 className="subtitle">{this.state.event.sport}</h2>
-          <p>{this.state.event.dateTime}</p>
+          <p>{this.state.event.dateTime.split('T')[0].split('-')[2]}/{this.state.event.dateTime.split('T')[0].split('-')[1]}/{this.state.event.dateTime.split('T')[0].split('-')[0]}</p>
+          <p>{this.state.event.dateTime.split('T')[1].split(':00.')[0]}</p>
           <p>{this.state.event.description}</p>
           <p>Team Size: {this.state.event.teamSize}</p>
           <p>ID: {this.state.event._id} </p>
