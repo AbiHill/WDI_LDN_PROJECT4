@@ -34,7 +34,7 @@
 .loginBox {
   max-width: 500px;
   height: 400px;
-  background-color: black;
+  background-color: rgba(0,0,0,0.4);
 
   .loginForm {
     max-width: 450px;
@@ -46,4 +46,8 @@
 .google-map {
   height: 100vh;
   background-color: #ccc;
+}
+
+.navbar {
+  background-color: rgba(0,0,0,0.4)!important;
 }
