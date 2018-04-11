@@ -29,28 +29,34 @@ class IndexRoute extends React.Component {
   render() {
     return(
       <div className="container">
+        <div className="page-title">
+          <i id="falcon-pages" className="fab fa-phoenix-framework"></i>
+          <h1>Events</h1>
+        </div>
         <form>
           <div className="field">
-            <input onChange={this.handleChange} className="input" type="text" name="search" placeholder="Search "/>
+            <input onChange={this.handleChange} className="index-search" type="text" name="search" placeholder="Search "/>
           </div>
         </form>
-        <ul className="columns is-multiline">
-          {this.filterEvents().map((event, i) =>
-            <li key={i} className="column is-one-third">
-              <Link to={`/events/${event._id}`}>
-                <div className="card">
-                  <div className="card-content">
-                    <img src={`${event.image}`} />
-                    <h2 className="title is-4">{event.name}</h2>
-                    <h3 className="title is-4">{event.sport}</h3>
-                    {/* splitting the date below */}
-                    {/* <p className="title is-4">{event.dateTime.split('T')[0].split('-')[2]}/{event.dateTime.split('T')[0].split('-')[1]}/{event.dateTime.split('T')[0].split('-')[0]}</p> */}
+        <div className="card-container">
+          <ul className="columns is-multiline">
+            {this.filterEvents().map((event, i) =>
+              <li key={i} className="column is-one-third">
+                <Link to={`/events/${event._id}`}>
+                  <div className="card">
+                    <div className="card-content">
+                      <img src={`${event.image}`} />
+                      <h2>{event.name}</h2>
+                      <h3>{event.sport}</h3>
+                      {/* splitting the date below */}
+                      {/* <p className="title is-4">{event.dateTime.split('T')[0].split('-')[2]}/{event.dateTime.split('T')[0].split('-')[1]}/{event.dateTime.split('T')[0].split('-')[0]}</p> */}
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </li>
-          )}
-        </ul>
+                </Link>
+              </li>
+            )}
+          </ul>
+        </div>
       </div>
     );
   }

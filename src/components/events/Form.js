@@ -4,7 +4,15 @@ import ReactFilestack from 'filestack-react';
 
 const apiKey = 'AU5Uo7xXbRUezl3OcFq3Zz';
 
+const options = {
+  accept: 'image/*',
+  transformations:
+    { crop: {
+      force: true,
+      aspectRatio: 0.95}
 
+    }
+};
 
 const Form = ({ handleChange, handleSubmit, data, handleFilestack }) => {
   console.log('this is the data', data.sport);
@@ -65,7 +73,7 @@ const Form = ({ handleChange, handleSubmit, data, handleFilestack }) => {
         buttonText="Upload Image"
         buttonClass="classname"
         // onSuccess={res => this.setState({ image: res.filesUploaded[0].url}, () => console.log(this.state))}
-        // options={options}
+        options={options}
         onSuccess={res => handleFilestack(res)}
       />
       <img src={`${data.image}`} />

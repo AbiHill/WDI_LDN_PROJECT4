@@ -63,16 +63,20 @@ class ShowRoute extends React.Component {
           <h2>Event Organiser</h2>
           <p>{this.state.event.createdBy.username}</p>
           <h2 className="Title">Attendies</h2>
-          {this.state.event.joinedUsers.map((user, i) =>
-            <li key={i} className="column is-one-third">
-              <div className="card">
-                <div className="card-content">
-                  <h3 className="title is-4">{user.firstName}</h3>
-                  {/* <img src={`${uer.image}`} /> */}
+          
+          <ul>
+            {this.state.event.joinedUsers.map((user, i) =>
+              <li key={i} className="column is-one-third">
+                <div className="card">
+                  <div className="card-content">
+                    <h3 className="title is-4">{user.firstName}</h3>
+                    {/* <img src={`${uer.image}`} /> */}
+                  </div>
                 </div>
-              </div>
-            </li>
-          )}
+              </li>
+            )}
+          </ul>
+
           {this.state.event.createdBy && this.state.event.createdBy._id === userId &&
             <div>
               <Link className="button is-primary" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
