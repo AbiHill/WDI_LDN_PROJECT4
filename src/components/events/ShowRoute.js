@@ -52,54 +52,57 @@ class ShowRoute extends React.Component {
     return (
       this.state.event ? (
         <div className="container">
-          <h1 className="title">{this.state.event.name}</h1>
-          <h2 className="subtitle">{this.state.event.sport}</h2>
-          <p>{this.state.event.dateTime.split('T')[0].split('-')[2]}/{this.state.event.dateTime.split('T')[0].split('-')[1]}/{this.state.event.dateTime.split('T')[0].split('-')[0]}</p>
-          <p>{this.state.event.dateTime.split('T')[1].split(':00.')[0]}</p>
-          <p>{this.state.event.description}</p>
-          <p>Team Size: {this.state.event.teamSize}</p>
-          <p>ID: {this.state.event._id} </p>
-          <img src={`${this.state.event.image}`} />
-          <h2>Event Organiser</h2>
-          <p>{this.state.event.createdBy.username}</p>
-          <h2 className="Title">Attendies</h2>
-          
-          <ul>
-            {this.state.event.joinedUsers.map((user, i) =>
-              <li key={i} className="column is-one-third">
-                <div className="card">
-                  <div className="card-content">
-                    <h3 className="title is-4">{user.firstName}</h3>
-                    {/* <img src={`${uer.image}`} /> */}
+          <div className="show-container">
+            <h1 className="title">{this.state.event.name}</h1>
+            <h2 className="subtitle">{this.state.event.sport}</h2>
+            <p>{this.state.event.dateTime.split('T')[0].split('-')[2]}/{this.state.event.dateTime.split('T')[0].split('-')[1]}/{this.state.event.dateTime.split('T')[0].split('-')[0]}</p>
+            <p>{this.state.event.dateTime.split('T')[1].split(':00.')[0]}</p>
+            <p>{this.state.event.description}</p>
+            <p>Team Size: {this.state.event.teamSize}</p>
+            <p>ID: {this.state.event._id} </p>
+            <img src={`${this.state.event.image}`} />
+            <h2>Event Organiser</h2>
+            <p>{this.state.event.createdBy.username}</p>
+            <h2 className="Title">Attendies</h2>
+
+            <ul>
+              {this.state.event.joinedUsers.map((user, i) =>
+                <li key={i} className="column is-one-third">
+                  <div className="card">
+                    <div className="card-content">
+                      <h3 className="title is-4">{user.firstName}</h3>
+                      {/* <img src={`${uer.image}`} /> */}
+                    </div>
                   </div>
-                </div>
-              </li>
-            )}
-          </ul>
+                </li>
+              )}
+            </ul>
 
-          {this.state.event.createdBy && this.state.event.createdBy._id === userId &&
-            <div>
-              <Link className="button is-primary" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
-              <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
-            </div>
-          }
+            {this.state.event.createdBy && this.state.event.createdBy._id === userId &&
+              <div>
+                <Link className="button is-primary" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
+                <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+              </div>
+            }
 
-          { this.state.event.createdBy && this.state.event.createdBy._id !== userId && Auth.isAuthenticated() && this.state.event.joinedUsers.findIndex(user => user._id === userId) === -1 && !this.state.message &&
-          <button className="button" onClick={this.joinEvent}>Join Event</button>
-          }
-          { this.state.event.joinedUsers.findIndex(user => user._id === userId) !== -1 &&
-            <button className="button" onClick={this.leaveEvent}>Leave Event</button>
-          }
-          <p>{this.state.message}</p>
+            { this.state.event.createdBy && this.state.event.createdBy._id !== userId && Auth.isAuthenticated() && this.state.event.joinedUsers.findIndex(user => user._id === userId) === -1 && !this.state.message &&
+            <button className="button" onClick={this.joinEvent}>Join Event</button>
+            }
+            { this.state.event.joinedUsers.findIndex(user => user._id === userId) !== -1 &&
+              <button className="button" onClick={this.leaveEvent}>Leave Event</button>
+            }
+            <p>{this.state.message}</p>
 
 
-          <p>Address: {this.state.event.address}</p>
-          <GoogleMap center={this.state.event.location} />
+            <p>Address: {this.state.event.address}</p>
+            <GoogleMap center={this.state.event.location} />
+          </div>
         </div>
       ) : (
         <div className="container">
           <h1 className="title">LOADING</h1>
         </div>
+
       )
     );
   }

@@ -49,7 +49,7 @@ class IndexRoute extends React.Component {
                       <h2>{event.name}</h2>
                       <h3>{event.sport}</h3>
                       {/* splitting the date below */}
-                      {/* <p className="title is-4">{event.dateTime.split('T')[0].split('-')[2]}/{event.dateTime.split('T')[0].split('-')[1]}/{event.dateTime.split('T')[0].split('-')[0]}</p> */}
+                      <p>{event.dateTime.split('T')[0].split('-')[2]}-{event.dateTime.split('T')[0].split('-')[1]}-{event.dateTime.split('T')[0].split('-')[0]}</p>
                     </div>
                   </div>
                 </Link>
