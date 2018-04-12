@@ -174,6 +174,10 @@
     background: transparent;
   }
 
+  div.navbar-menu.is-active {
+    background-color: transparent;
+  }
+
   #navlink {
     color: white;
     font-family: 'Josefin Sans', sans-serif;
@@ -304,7 +308,6 @@ opacity: 1; /* Firefox */
 
   h2 {
     font-size: 15px;
-    color: white;
     font-family: 'Josefin Sans', sans-serif;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -314,14 +317,129 @@ opacity: 1; /* Firefox */
   }
 
   h4 {
-    font-size: 15px;
+    font-size: 18px;
     color: white;
     font-family: 'Josefin Sans', sans-serif;
     letter-spacing: 5px;
     text-transform: uppercase;
-    color:  #00BED7;
+
   }
 
+  span {
+    font-size: 10px;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 2px;
 
+  }
 
+  h5 {
+    font-size: 14px;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    padding-bottom: 12px;
+
+  }
+
+  h6 {
+    font-size: 12px;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color:  #00BED7;
+    padding-bottom: 10px;
+  }
+
+  img {
+    border-radius: 0px 30px 0px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+
+  }
+
+  button {
+    width: 150px;
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    border: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+
+  button:hover {
+    background-color: #00BED7;
+  }
+
+  .button {
+    width: 150px;
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    border: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+
+  .button:hover {
+    background-color: #00BED7;
+  }
+
+  a.edit-button-show-page {
+    width: 150px;
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    border: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    height: 25px;
+    margin-right: 10px;
+  }
+
+  a.edit-button-show-page:hover {
+    background-color: #00BED7;
+  }
+
+  .delete-edit-container {
+    padding: 10px 0px;
+  }
+
+}
+
+//SHOW PAGE DROP DOWN FOR Attendies
+
+.inner {
+  position: relative;
+  overflow: hidden;
+}
+.hide2 {
+  width: 100%;
+  float: left;
+  clear: both;
+  background: transparent;
+  opacity: 1;
+  overflow: hidden;
+  transform: translateY(0);
+  margin: 0;
+  transition: all 1.5s linear, margin 0s linear 0s;
+}
+.hide2 p {
+  padding: 10px;
+  margin: 0;
+}
+.ex2 .follow {
+  clear: both;
+}
+
+.ex2 input[type="checkbox"]:checked + .inner .hide2 {
+  opacity: 0;
+  transform: translateY(-100%);
+  margin-bottom: -999em;
+  transition: all 1.5s linear, margin 0s linear 1.5s;
 }

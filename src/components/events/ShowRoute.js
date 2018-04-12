@@ -65,20 +65,20 @@ class ShowRoute extends React.Component {
 
                 <div className="column is-half">
                   <h4>{this.state.event.name}</h4>
-                  <h4>{this.state.event.sport}</h4>
-                  <p>Event Organiser:  {this.state.event.createdBy.username}</p>
-                  <p>{this.state.event.dateTime.split('T')[0].split('-')[2]}/{this.state.event.dateTime.split('T')[0].split('-')[1]}/{this.state.event.dateTime.split('T')[0].split('-')[0]}</p>
-                  <p>{this.state.event.dateTime.split('T')[1].split(':00.')[0]}</p>
-                  <p>Address: {this.state.event.address}</p>
-                  <p>{this.state.event.description}</p>
-                  <p>Team Size: {this.state.event.teamSize}</p>
+                  <h5>{this.state.event.sport}</h5>
+                  <h6>Event Organiser:<br/><span>{this.state.event.createdBy.username}</span></h6>
+                  <h6>Date:<br/><span>{this.state.event.dateTime.split('T')[0].split('-')[2]}/{this.state.event.dateTime.split('T')[0].split('-')[1]}/{this.state.event.dateTime.split('T')[0].split('-')[0]}</span></h6>
+                  <h6>Time:<br/> <span>{this.state.event.dateTime.split('T')[1].split(':00.')[0]}</span></h6>
+                  <h6>Team Size:<br/> <span>{this.state.event.teamSize}</span></h6>
+                  <h6>Address:<br/><span>{this.state.event.address}</span></h6>
+                  <h6>Info:<br/> <span>{this.state.event.description}</span></h6>
                   {this.state.event.createdBy && this.state.event.createdBy._id === userId &&
-                    <div>
-                      <Link className="button is-primary" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
-                      <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+                    <div className="delete-edit-container">
+                      <Link className="edit-button-show-page" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
+                      <button onClick={this.handleDelete}>Delete</button>
                     </div>
                   }
-                  <button>See Attendies</button>
+                  <button>Attendies</button>
                   { this.state.event.createdBy && this.state.event.createdBy._id !== userId && Auth.isAuthenticated() && this.state.event.joinedUsers.findIndex(user => user._id === userId) === -1 && !this.state.message &&
                   <button className="button" onClick={this.joinEvent}>Join Event</button>
                   }
@@ -89,20 +89,31 @@ class ShowRoute extends React.Component {
                 </div>
               </div>
             </div>
+            <div className="ex2">
+              <label htmlFor="item-2">Toggle Div</label>
+              <input type="checkbox" name="rwo" id="item-2" />
+              <div className="inner">
+                <div className="hide2">
+                  <h2 className="Title">Attendies</h2>
+                  <ul>
+                    {this.state.event.joinedUsers.map((user, i) =>
+                      <li key={i} className="column is-one-third">
+                        <div className="card">
+                          <div className="card-content">
+                            <h5>{user.firstName}</h5>
+                            <h6>{user.username}</h6>
+                            {/* <img src={`${uer.image}`} /> */}
+                          </div>
+                        </div>
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              </div>
+              <p className="follow">Following content</p>
+            </div>
 
-            <h2 className="Title">Attendies</h2>
-            <ul>
-              {this.state.event.joinedUsers.map((user, i) =>
-                <li key={i} className="column is-one-third">
-                  <div className="card">
-                    <div className="card-content">
-                      <h3 className="title is-4">{user.firstName}</h3>
-                      {/* <img src={`${uer.image}`} /> */}
-                    </div>
-                  </div>
-                </li>
-              )}
-            </ul>
+
 
 
 
