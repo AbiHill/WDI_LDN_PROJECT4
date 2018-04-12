@@ -23,28 +23,41 @@ class ShowProfile extends React.Component {
     if (!this.state.user) return false;
     console.log(this.state.user);
     return (
-      <div className="container">
-        <h1 className="title">{this.state.user.firstName}</h1>
-        <img src={`${this.state.user.image}`} />
-        <h2 className='subtitle'>{this.state.user.username}</h2>
-        <h2 className='subtitle'>{this.state.user.email}</h2>
-        <h2 className='subtitle'>{this.state.user.address}</h2>
-        <h2 className='subtitle'>{this.state.user.tel}</h2>
-        <h2 className="title">Your Events</h2>
-        {this.state.user.events.map((event, i) =>
-          <li key={i} className="column is-one-third">
-            <Link to={`/events/${event._id}`}>
-              <div className="card">
-                <div className="card-content">
-                  <h3 className="title is-4">{event.name}</h3>
-                  <h4 className="subtitle">{event.sport}</h4>
-                  <h4></h4>
-                  <img src={`${event.image}`} />
-                </div>
-              </div>
-            </Link>
-          </li>
-        )}
+      <div className="profile-container">
+        <div className="container">
+          <h1>{this.state.user.firstName}</h1>
+
+          <div className="card">
+            <div className="card-content">
+              <img src={`${this.state.user.image}`} />
+              <h4>Username:</h4>
+              <p>{this.state.user.username}</p>
+              <h4>Email:</h4>
+              <p>{this.state.user.email}</p>
+              <h4>Address:</h4>
+              <p>{this.state.user.address}</p>
+              <h4>Mobile:</h4>
+              <p>{this.state.user.tel}</p>
+            </div>
+          </div>
+
+          <h3>Your Events</h3>
+          <div className="columns is-multiline">
+            {this.state.user.events.map((event, i) =>
+              <li key={i} className="column is-one-third">
+                <Link to={`/events/${event._id}`}>
+                  <div className="card">
+                    <div className="card-content">
+                      <h4>{event.name}</h4>
+                      <h5>{event.sport}</h5>
+                      <img src={`${event.image}`} />
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            )}
+          </div>
+        </div>
       </div>
     );
   }

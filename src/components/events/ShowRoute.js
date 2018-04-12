@@ -10,7 +10,8 @@ class ShowRoute extends React.Component {
   state = {
     event: null,
     message: '',
-    joined: null
+    joined: null,
+    checked: true
   };
 
   componentDidMount() {
@@ -46,6 +47,10 @@ class ShowRoute extends React.Component {
       .catch(err => console.error(err));
   }
 
+  handleToggle = () => {
+    this.setState({ checked: !this.state.checked });
+  }
+
   render() {
     console.log(this.state.event);
     const userId = Auth.getPayload().sub;
@@ -78,7 +83,7 @@ class ShowRoute extends React.Component {
                       <button onClick={this.handleDelete}>Delete</button>
                     </div>
                   }
-                  <button>Attendies</button>
+
                   { this.state.event.createdBy && this.state.event.createdBy._id !== userId && Auth.isAuthenticated() && this.state.event.joinedUsers.findIndex(user => user._id === userId) === -1 && !this.state.message &&
                   <button className="button" onClick={this.joinEvent}>Join Event</button>
                   }
@@ -89,13 +94,15 @@ class ShowRoute extends React.Component {
                 </div>
               </div>
             </div>
+
             <div className="ex2">
-              <label htmlFor="item-2">Toggle Div</label>
-              <input type="checkbox" name="rwo" id="item-2" />
+              <button><label htmlFor="item-2">Attendees</label></button>
+              <input onChange={this.handleToggle} checked={this.state.checked} type="checkbox" name="rwo" id="item-2" />
               <div className="inner">
                 <div className="hide2">
-                  <h2 className="Title">Attendies</h2>
-                  <ul>
+
+                  <h2 className="Title">Attendees</h2>
+                  <ul className="columns">
                     {this.state.event.joinedUsers.map((user, i) =>
                       <li key={i} className="column is-one-third">
                         <div className="card">
@@ -108,9 +115,10 @@ class ShowRoute extends React.Component {
                       </li>
                     )}
                   </ul>
+
                 </div>
               </div>
-              <p className="follow">Following content</p>
+              <p className="follow"></p>
             </div>
 
 
