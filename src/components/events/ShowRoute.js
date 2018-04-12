@@ -53,18 +53,44 @@ class ShowRoute extends React.Component {
       this.state.event ? (
         <div className="container">
           <div className="show-container">
+            <i id="falcon-pages" className="fab fa-phoenix-framework"></i>
             <h1 className="title">{this.state.event.name}</h1>
             <h2 className="subtitle">{this.state.event.sport}</h2>
-            <p>{this.state.event.dateTime.split('T')[0].split('-')[2]}/{this.state.event.dateTime.split('T')[0].split('-')[1]}/{this.state.event.dateTime.split('T')[0].split('-')[0]}</p>
-            <p>{this.state.event.dateTime.split('T')[1].split(':00.')[0]}</p>
-            <p>{this.state.event.description}</p>
-            <p>Team Size: {this.state.event.teamSize}</p>
-            <p>ID: {this.state.event._id} </p>
-            <img src={`${this.state.event.image}`} />
-            <h2>Event Organiser</h2>
-            <p>{this.state.event.createdBy.username}</p>
-            <h2 className="Title">Attendies</h2>
 
+            <div className="event-show-top">
+              <div className="columns is-multiline">
+                <div className="column is-half">
+                  <img src={`${this.state.event.image}`} />
+                </div>
+
+                <div className="column is-half">
+                  <h4>{this.state.event.name}</h4>
+                  <h4>{this.state.event.sport}</h4>
+                  <p>Event Organiser:  {this.state.event.createdBy.username}</p>
+                  <p>{this.state.event.dateTime.split('T')[0].split('-')[2]}/{this.state.event.dateTime.split('T')[0].split('-')[1]}/{this.state.event.dateTime.split('T')[0].split('-')[0]}</p>
+                  <p>{this.state.event.dateTime.split('T')[1].split(':00.')[0]}</p>
+                  <p>Address: {this.state.event.address}</p>
+                  <p>{this.state.event.description}</p>
+                  <p>Team Size: {this.state.event.teamSize}</p>
+                  {this.state.event.createdBy && this.state.event.createdBy._id === userId &&
+                    <div>
+                      <Link className="button is-primary" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
+                      <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+                    </div>
+                  }
+                  <button>See Attendies</button>
+                  { this.state.event.createdBy && this.state.event.createdBy._id !== userId && Auth.isAuthenticated() && this.state.event.joinedUsers.findIndex(user => user._id === userId) === -1 && !this.state.message &&
+                  <button className="button" onClick={this.joinEvent}>Join Event</button>
+                  }
+                  { this.state.event.joinedUsers.findIndex(user => user._id === userId) !== -1 &&
+                    <button className="button" onClick={this.leaveEvent}>Leave Event</button>
+                  }
+                  <p>{this.state.message}</p>
+                </div>
+              </div>
+            </div>
+
+            <h2 className="Title">Attendies</h2>
             <ul>
               {this.state.event.joinedUsers.map((user, i) =>
                 <li key={i} className="column is-one-third">
@@ -78,23 +104,10 @@ class ShowRoute extends React.Component {
               )}
             </ul>
 
-            {this.state.event.createdBy && this.state.event.createdBy._id === userId &&
-              <div>
-                <Link className="button is-primary" to={`/events/${this.state.event._id}/edit`}>Edit</Link>
-                <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
-              </div>
-            }
-
-            { this.state.event.createdBy && this.state.event.createdBy._id !== userId && Auth.isAuthenticated() && this.state.event.joinedUsers.findIndex(user => user._id === userId) === -1 && !this.state.message &&
-            <button className="button" onClick={this.joinEvent}>Join Event</button>
-            }
-            { this.state.event.joinedUsers.findIndex(user => user._id === userId) !== -1 &&
-              <button className="button" onClick={this.leaveEvent}>Leave Event</button>
-            }
-            <p>{this.state.message}</p>
 
 
-            <p>Address: {this.state.event.address}</p>
+
+
             <GoogleMap center={this.state.event.location} />
           </div>
         </div>
