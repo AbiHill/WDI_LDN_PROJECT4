@@ -109,7 +109,7 @@ class ShowRoute extends React.Component {
                           <div className="card-content">
                             <h5>{user.firstName}</h5>
                             <h6>{user.username}</h6>
-                            {/* <img src={`${uer.image}`} /> */}
+                            <img src={`${user.image}`} />
                           </div>
                         </div>
                       </li>

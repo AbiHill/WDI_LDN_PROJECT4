@@ -31,7 +31,7 @@ class Login extends React.Component{
         <div className="fullscreen-bg">
           {/* <!-- The video --> */}
           <video autoPlay muted loop id="myVideo" className="fullscreen-bg_video">
-            <source src="../../scss/images/basketball3.mp4" type="video/mp4" />
+            <source src="/assets/basketball3.mp4" type="video/mp4" />
           </video>
         </div>
 

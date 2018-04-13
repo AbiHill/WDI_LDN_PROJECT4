@@ -7,6 +7,16 @@ import AutoComplete from '../common/AutoComplete';
 import ReactFilestack from 'filestack-react';
 const apiKey = 'AU5Uo7xXbRUezl3OcFq3Zz';
 
+const options = {
+  accept: 'image/*',
+  transformations:
+    { crop: {
+      force: true,
+      aspectRatio: 0.95}
+
+    }
+};
+
 class Register extends React.Component {
 
   state = {}
@@ -73,7 +83,7 @@ class Register extends React.Component {
             buttonText="Upload Image"
             buttonClass="classname"
             // onSuccess={res => this.setState({ image: res.filesUploaded[0].url}, () => console.log(this.state))}
-            // options={options}
+            options={options}
             onSuccess={res => this.setState({ image: res.filesUploaded[0].url })}
           />
           {this.state.image &&
