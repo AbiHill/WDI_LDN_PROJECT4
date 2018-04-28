@@ -3,6 +3,7 @@ const secureRoute = require('../lib/secureRoute');
 const events = require('../controllers/events');
 const auth = require('../controllers/auth');
 
+//EVENTS ROUTES
 router.route('/events')
   .get(events.index)
   .post(secureRoute, events.create);

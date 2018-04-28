@@ -7,6 +7,7 @@ const User = require('../models/user');
 mongoose.connect(dbURI, (err, db) => {
   db.dropDatabase();
 
+  // Seeding a user to attached the initial events in the database
   User.create({
     username: 'abihill',
     firstName: 'abi',

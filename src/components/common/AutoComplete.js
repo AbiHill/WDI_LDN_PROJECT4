@@ -1,5 +1,7 @@
 /* global google */
 
+//Google Autocomplete funcationality which is utilised on the registeration form and new event form
+
 import React from 'react';
 
 class AutoComplete extends React.Component {

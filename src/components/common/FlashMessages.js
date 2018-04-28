@@ -1,3 +1,5 @@
+//flash messages for when users log in etc
+
 import React from 'react';
 import Flash from '../../lib/Flash';
 

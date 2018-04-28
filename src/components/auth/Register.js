@@ -87,7 +87,7 @@ class Register extends React.Component {
             onSuccess={res => this.setState({ image: res.filesUploaded[0].url })}
           />
           {this.state.image &&
-          <img src={`${this.state.image}`} />
+          <img  className="image" src={`${this.state.image}`} />
           }
           <div className="field">
             <label htmlFor="address">Address</label>

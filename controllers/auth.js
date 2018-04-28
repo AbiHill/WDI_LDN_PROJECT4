@@ -3,10 +3,12 @@ const jwt = require('jsonwebtoken');
 const { secret } = require('../config/environment');
 const twilio = require('../lib/twilio');
 
+// REGISTER
 function register(req, res, next) {
-  console.log(req.body);
+  //corrections for the data being passed through via google places in the front end.
   req.body.location = req.body.address.location;
   req.body.address = req.body.address.address;
+
   User.create(req.body)
     .then(user => {
       const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '24h' });
@@ -15,6 +17,7 @@ function register(req, res, next) {
     .catch(next);
 }
 
+//LOGIN
 function login(req, res, next) {
   User.findOne({ email: req.body.email })
     .then(user => {
@@ -45,17 +48,19 @@ function update(req, res, next) {
     .catch(next);
 }
 
+// USER JOIN EVENT
 function joinEvent(req, res, next) {
   req.currentUser.events.push(req.params.eventId);
   req.currentUser.save()
     .then(user => {
       res.json(user);
       return twilio
-        .sendSMS(user.tel, 'You have joined an event! Sick bruv, see you there yo!');
+        .sendSMS(user.tel, 'You have joined an event! See you there!');
     })
     .catch(next);
 }
 
+// USER LEAVE EVENT
 function leaveEvent(req, res, next) {
   User.findById(req.currentUser._id)
     .then(user => {

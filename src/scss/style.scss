@@ -215,13 +215,13 @@ div.card-container {
   box-shadow: none!important;
   min-height: 100px;
 
-  img {
+  .image {
     border-radius: 0px 30px 0px;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
   }
 
-  img:hover {
+  .image:hover {
     filter: grayscale(50%);
   }
 
@@ -352,7 +352,7 @@ opacity: 1; /* Firefox */
     padding-bottom: 10px;
   }
 
-  img {
+  .image {
     border-radius: 0px 30px 0px;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);

@@ -16,11 +16,13 @@ const userSchema = new mongoose.Schema({
   }
 });
 
+//password verification
 userSchema
   .virtual('passwordConfirmation')
   .set(function setPasswordConfirmation(passwordConfirmation) {
     this._passwordConfirmation = passwordConfirmation;
   });
+
 
 userSchema.pre('validate', function checkPasswords(next) {
   if(this.isModified('password') && this._passwordConfirmation !== this.password) {

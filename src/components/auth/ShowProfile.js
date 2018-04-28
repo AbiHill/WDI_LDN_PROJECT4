@@ -29,7 +29,7 @@ class ShowProfile extends React.Component {
 
           <div className="card">
             <div className="card-content">
-              <img src={`${this.state.user.image}`} />
+              <img className="image" src={`${this.state.user.image}`} />
               <h4>Username:</h4>
               <p>{this.state.user.username}</p>
               <h4>Email:</h4>
@@ -50,7 +50,7 @@ class ShowProfile extends React.Component {
                     <div className="card-content">
                       <h4>{event.name}</h4>
                       <h5>{event.sport}</h5>
-                      <img src={`${event.image}`} />
+                      <img className="image" src={`${event.image}`} />
                     </div>
                   </div>
                 </Link>

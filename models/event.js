@@ -17,7 +17,7 @@ const eventSchema = new mongoose.Schema({
   timestamps: true
 });
 
-//virtual is to tie your ids to your users - so you don't have to push the joinedUsers in to this data, it will just search the users collection below and try to find this particular events id and if it's a match it will pull it back. It's like connecting the collections. So if a user unjoins an event this will automatically update and you don't have to worry about sliceing it from the array.
+//virtual set up to tie the user to an event
 eventSchema
   .virtual('joinedUsers', {
     localField: '_id',

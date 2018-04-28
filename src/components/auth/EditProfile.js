@@ -1,3 +1,5 @@
+//in progress
+
 import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
@@ -74,7 +76,7 @@ class EditProfile extends React.Component {
           onSuccess={res => this.setState({ image: res.filesUploaded[0].url })}
         />
         {this.state.image &&
-        <img src={`${this.state.image}`} />
+        <img className="image" src={`${this.state.image}`} />
         }
         <div className="field">
           <label htmlFor="address">Address</label>

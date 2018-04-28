@@ -79,7 +79,7 @@ const Form = ({ handleChange, handleSubmit, data, handleFilestack }) => {
           onSuccess={res => handleFilestack(res)}
         />
 
-        <img src={`${data.image}`} />
+        <img className="image" src={`${data.image}`} />
         {/* <div className="field">
           <label htmlFor="date">date</label>
           <input

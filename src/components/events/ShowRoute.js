@@ -65,7 +65,7 @@ class ShowRoute extends React.Component {
             <div className="event-show-top">
               <div className="columns is-multiline">
                 <div className="column is-half">
-                  <img src={`${this.state.event.image}`} />
+                  <img className="image" src={`${this.state.event.image}`} />
                 </div>
 
                 <div className="column is-half">
@@ -109,7 +109,7 @@ class ShowRoute extends React.Component {
                           <div className="card-content">
                             <h5>{user.firstName}</h5>
                             <h6>{user.username}</h6>
-                            <img src={`${user.image}`} />
+                            <img className="image" src={`${user.image}`} />
                           </div>
                         </div>
                       </li>

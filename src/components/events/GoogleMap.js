@@ -7,6 +7,8 @@ class GoogleMap extends React.Component{
     const map = new google.maps.Map(this.mapDiv, {
       center: this.props.center,
       zoom: 18,
+      
+      //SNAZZY MAPS STYLING
       styles: [
         {
           'featureType': 'all',
@@ -48,132 +50,132 @@ class GoogleMap extends React.Component{
           ]
         },
         {
-        'featureType': 'administrative',
-        'elementType': 'geometry.fill',
-        'stylers': [
+          'featureType': 'administrative',
+          'elementType': 'geometry.fill',
+          'stylers': [
             {
-                'color': '#000000'
+              'color': '#000000'
             },
             {
-                'lightness': 20
+              'lightness': 20
             }
-        ]
-    },
-    {
-        'featureType': 'administrative',
-        'elementType': 'geometry.stroke',
-        'stylers': [
+          ]
+        },
+        {
+          'featureType': 'administrative',
+          'elementType': 'geometry.stroke',
+          'stylers': [
             {
-                'color': '#000000'
+              'color': '#000000'
             },
             {
-                'lightness': 17
+              'lightness': 17
             },
             {
-                'weight': 1.2
+              'weight': 1.2
             }
-        ]
-    },
-    {
-        'featureType': 'landscape',
-        'elementType': 'geometry',
-        'stylers': [
+          ]
+        },
+        {
+          'featureType': 'landscape',
+          'elementType': 'geometry',
+          'stylers': [
             {
-                'color': '#000000'
+              'color': '#000000'
             },
             {
-                'lightness': 20
+              'lightness': 20
             }
-        ]
+          ]
         },
         {
-            'featureType': 'poi',
-            'elementType': 'geometry',
-            'stylers': [
-                {
-                    'color': '#000000'
-                },
-                {
-                    'lightness': 21
-                }
-            ]
+          'featureType': 'poi',
+          'elementType': 'geometry',
+          'stylers': [
+            {
+              'color': '#000000'
+            },
+            {
+              'lightness': 21
+            }
+          ]
         },
         {
-            'featureType': 'road.highway',
-            'elementType': 'geometry.fill',
-            'stylers': [
-                {
-                    'color': '#000000'
-                },
-                {
-                    'lightness': 17
-                }
-            ]
+          'featureType': 'road.highway',
+          'elementType': 'geometry.fill',
+          'stylers': [
+            {
+              'color': '#000000'
+            },
+            {
+              'lightness': 17
+            }
+          ]
         },
         {
-            'featureType': 'road.highway',
-            'elementType': 'geometry.stroke',
-            'stylers': [
-                {
-                    'color': '#000000'
-                },
-                {
-                    'lightness': 29
-                },
-                {
-                    'weight': 0.2
-                }
-            ]
+          'featureType': 'road.highway',
+          'elementType': 'geometry.stroke',
+          'stylers': [
+            {
+              'color': '#000000'
+            },
+            {
+              'lightness': 29
+            },
+            {
+              'weight': 0.2
+            }
+          ]
         },
         {
-            'featureType': 'road.arterial',
-            'elementType': 'geometry',
-            'stylers': [
-                {
-                    'color': '#000000'
-                },
-                {
-                    'lightness': 18
-                }
-            ]
+          'featureType': 'road.arterial',
+          'elementType': 'geometry',
+          'stylers': [
+            {
+              'color': '#000000'
+            },
+            {
+              'lightness': 18
+            }
+          ]
         },
         {
-            'featureType': 'road.local',
-            'elementType': 'geometry',
-            'stylers': [
-                {
-                    'color': '#000000'
-                },
-                {
-                    'lightness': 16
-                }
-            ]
+          'featureType': 'road.local',
+          'elementType': 'geometry',
+          'stylers': [
+            {
+              'color': '#000000'
+            },
+            {
+              'lightness': 16
+            }
+          ]
         },
         {
-            'featureType': 'transit',
-            'elementType': 'geometry',
-            'stylers': [
-                {
-                    'color': '#000000'
-                },
-                {
-                    'lightness': 19
-                }
-            ]
+          'featureType': 'transit',
+          'elementType': 'geometry',
+          'stylers': [
+            {
+              'color': '#000000'
+            },
+            {
+              'lightness': 19
+            }
+          ]
         },
         {
-            'featureType': 'water',
-            'elementType': 'geometry',
-            'stylers': [
-                {
-                    'color': '#000000'
-                },
-                {
-                    'lightness': 17
-                }
-            ]
+          'featureType': 'water',
+          'elementType': 'geometry',
+          'stylers': [
+            {
+              'color': '#000000'
+            },
+            {
+              'lightness': 17
+            }
+          ]
         }
-    ]
+      ]
 
     });
     new google.maps.Marker({
