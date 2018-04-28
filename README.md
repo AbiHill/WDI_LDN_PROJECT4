@@ -6,7 +6,7 @@ For my final project, I was required to build a full-stack application using an 
 
 I play a lot of basketball in my spare time and I try to organise recreational matches at local basketball courts around London. Sometimes with it being difficult to organise the teams I thought it would be a good idea to create my own sports recreational meet up app called Rec Head.
 
-Rec Head allows users to create their own sports events and join others. I've integrated Google Maps API and Google Address Auto Complete to make it easy for the event organise to display the location of the sports event.
+Rec Head allows users to create their own sports events and join others. I've integrated Google Maps API and Google Address Auto Complete to make it easy for the event organiser to display the location of the sports event.
 
 A highlight of this project was integrating Twilio which is a CRM tool to send automated text messages when a user has successfully joined an event.
 
