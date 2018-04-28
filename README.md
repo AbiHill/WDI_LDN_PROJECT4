@@ -4,7 +4,7 @@
 
 For my final project, I was required to build a full-stack application using an express API to serve data from a Mongo database.
 
-As I play a lot of basketball in my spare time and I try to organise recreational matches at local basketball courts around London and sometimes with it being difficult tricky to organise the teams I thought it would be a good idea to create my own sports recreational meet up app called Rec Head.
+I play a lot of basketball in my spare time and I try to organise recreational matches at local basketball courts around London. Sometimes with it being difficult to organise the teams I thought it would be a good idea to create my own sports recreational meet up app called Rec Head.
 
 Rec Head allows users to create their own sports events and join others. I've integrated Google Maps API and Google Address Auto Complete to make it easy for the event organise to display the location of the sports event.
 
