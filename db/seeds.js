@@ -11,9 +11,9 @@ mongoose.connect(dbURI, (err, db) => {
   User.create({
     username: 'abihill',
     firstName: 'abi',
-    email: 'abihill8@gmail.com',
-    tel: '07720383798',
-    address: '18 Chopwell Close, Stratford, E15 4RP',
+    email: 'abi@abi.com',
+    tel: '00000000000',
+    address: '00 Address Close, London, E15 4RR',
     password: 'password',
     passwordConfirmation: 'password',
     image: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-1/p160x160/21557860_979890177921_6745485056896021315_n.jpg?_nc_cat=0&oh=5d12a2e800376f80db13d6e97958ebbd&oe=5B7478BA',
