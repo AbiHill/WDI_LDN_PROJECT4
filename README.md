@@ -29,6 +29,10 @@ Another highlight of the project was also including FileStack which is a great t
 
 <p align="center"><img src="https://i.imgur.com/YkzFieY.png" width="700"></p>
 
+Users are able to view their profile which displays what events they are attending. User's are also able to see who are attending certain events.
+
+<p align="center"><img src="https://i.imgur.com/2Yz2o7s.png" width="700"></p>
+
 ---
 
 To improve the app further I'm keen to include a feature that allows users to message each other and also develop the events page further to showcase a calendar of events and improve the usability.
