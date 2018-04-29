@@ -8,7 +8,6 @@ const options = {
   accept: 'image/*',
   transformations:
     { crop: {
-      force: true,
       aspectRatio: 0.95}
 
     }

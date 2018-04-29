@@ -7,6 +7,7 @@ import AutoComplete from '../common/AutoComplete';
 import ReactFilestack from 'filestack-react';
 const apiKey = 'AU5Uo7xXbRUezl3OcFq3Zz';
 
+//below you can pass in options for filestack
 const options = {
   accept: 'image/*',
   transformations:
