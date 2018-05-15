@@ -37,6 +37,7 @@ Users are able to view their profile which displays what events they are attendi
 
 To improve the app further I'm keen to include a feature that allows users to message each other and also develop the events page further to showcase a calendar of events and improve the usability.
 
+
 In order to run the app:
 * Run Yarn
 * yarn start:client

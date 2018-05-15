@@ -654,3 +654,11 @@ opacity: 1; /* Firefox */
   }
 
   }
+
+  /* ipad 4th generation portrait */
+@media screen and (max-width : 768px){
+  video {
+    display: none;
+  }
+
+}

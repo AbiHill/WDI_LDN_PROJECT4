@@ -47,7 +47,7 @@ function update(req, res, next) {
     .then(user => res.json(user))
     .catch(next);
 }
-
+//-----------------------------------------------------------------
 // USER JOIN EVENT
 function joinEvent(req, res, next) {
   req.currentUser.events.push(req.params.eventId);
@@ -59,6 +59,7 @@ function joinEvent(req, res, next) {
     })
     .catch(next);
 }
+//--------------------------------------------------------------------
 
 // USER LEAVE EVENT
 function leaveEvent(req, res, next) {

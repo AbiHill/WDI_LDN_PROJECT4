@@ -19,7 +19,7 @@ class IndexRoute extends React.Component {
   }
 
   filterEvents = () => {
-    //make a regex
+    //make a regex and use i to case insensitive matching
     const regex = new RegExp(this.state.search, 'i');
     //use _.filter to filter the events
     const filtered = _.filter(this.state.events, (event) => regex.test(event.name));
